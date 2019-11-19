@@ -32,10 +32,8 @@ Route::get('/staffs', 'PagesController@staffs');
 
 
 Route::resource('posts','PostsController');
-
-
 //users
-Route::get('create-user', 'UsersController@create')->name('create-user');
+Route::resource('users','UsersController');
 
 
 
