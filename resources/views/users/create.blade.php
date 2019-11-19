@@ -18,38 +18,38 @@
               <h2 class="text-capitalize">Register User</h2>
               <p class="paragraph">Fill in the details of the user you'd like to add to Nouveta. </p>
               <div class="the-form p-md-5 px-5">
-              <form method="POST" name="usrform" enctype="multipart/form-data" id="usrform" action="{{route('posts.store')}}">
+              <form method="POST" name="usrform" enctype="multipart/form-data" id="usrform" action="{{route('users.store')}}">
                 @csrf
                   <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 ">
                       <label>User's Names</label>
-                      <input type="text" name="names" placeholder="What are your official names?" autofocus class="form-control">
+                      <input type="text" name="name" placeholder="What are your official names?" autofocus class="form-control" name="name" value="{{old('name')}}">
                     </div>
-                    <div class="col-12 col-md-6">
+                    <!-- <div class="col-12 col-md-6">
                       <label>User's Alias/Nickname</label>
-                      <input type="text" name="aka" placeholder="What other name(s) do you go by?" class="form-control">
+                      <input type="text" placeholder="Enter user's nicknames" class="form-control" name="nickname" value="{{old('nickname')}}">
                     </div>
-
+ -->
                     {{-- hidden skills --}}
                     <div class="col-12 col-md-6 d-none">
                             <label>skills</label>
-                            <input type="text" id="the-skills" name="skills" placeholder="What other name(s) do you go by?" class="form-control">
+                            <input type="text" id="the-skills" placeholder="What other name(s) do you go by?" class="form-control">
                           </div>
 
                           {{-- hidden hobbies --}}
                           <div class="col-12 col-md-6 d-none">
                                 <label>hobbies</label>
-                                <input type="text" id="the-hobbies" name="hobbies" placeholder="What other name(s) do you go by?" class="form-control">
+                                <input type="text" id="the-hobbies" placeholder="What other name(s) do you go by?" class="form-control">
                               </div>
                   </div>
                   <div class="row">
                     <div class="col-12">
                       <label>Enter the user's email</label>
-                      <input rows="4" name="about"   cols="50" form="usrform" class="form-control" placeholder="Email..." name="email" value="{{old('email')}}"></input>
+                      <input rows="4"  cols="50" form="usrform" class="form-control" placeholder="Email..." name="email" value="{{old('email')}}"></input>
                     </div>
                     <div class="col-12">
                       <label>Enter the user's phone number</label>
-                      <textarea name="unik" rows="3"  cols="50"  form="usrform" class="form-control" placeholder="Phone number" name="phone_number" value="{{old('phone_number')}}"></textarea>
+                      <input rows="3"  cols="50"  form="usrform" class="form-control" placeholder="Phone number" name="phone" value="{{old('phone')}}"></input>
                     </div>
                     <!-- <div class="col-12 mb-2">
                       <label>What are some interesting facts about you?</label>

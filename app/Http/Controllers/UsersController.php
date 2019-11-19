@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use App\User;
+
 
 class UsersController extends Controller
 {
@@ -37,6 +42,44 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request->all());
+
+        $validatedData = $request->validate([
+        	'email' => 'required|email|max:255',
+        	'phone' => 'required',
+        	'name' => 'required',
+        ]);
+
+        $password = Str::random(8);
+
+        
+
+        $email = $request->email;
+        $data = [
+                'name' => $request->name,
+                'password' => $password,
+                'title' => 'Account details for '. $request->name,
+                
+                 ];
+
+        Mail::send('emails.send', $data, function ($message) use ($email)
+            {
+                $message->subject('New account created!');
+                $message->from('admin@nouveta.tech', 'Ian Macharia');
+                $message->to($email);
+
+            });
+
+
+        $user  = new User;
+
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->name = $request->name;
+        $user->password = Hash::make($password);
+        $user->save();
+
+        return redirect()->route('users.create');
     }
 
     /**
