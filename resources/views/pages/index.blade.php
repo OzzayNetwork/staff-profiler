@@ -13,8 +13,8 @@
             </tr>
         </thead>
         	<tbody>
-                @if(count($posts)>0)
-                    @foreach($posts as $post)
+                @if(count($posts ?? '')>0)
+                    @foreach($posts ?? '' as $post)
                          <tr>
                             <td class="d-flex align-items-center">
                                 <a href="new_member.html">
