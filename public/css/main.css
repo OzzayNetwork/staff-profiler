@@ -1,0 +1,23 @@
+a {
+  color: inherit;
+  transition: 0.5s;
+}
+
+.row {
+  transition: 0.5s;
+}
+
+a:hover .row {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+img.staff-image {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.staff-link {
+  border-bottom: 1px solid black;
+  padding: 0.3em;
+}

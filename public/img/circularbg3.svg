@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{fill:none;stroke:#EFEFEF;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#EFEFEF;stroke-width:200;}
+	.st3{fill:#EFEFEF;}
+	.st4{fill:none;}
+	.st5{fill:none;stroke:#EFEFEF;stroke-width:20;}
+	.st6{opacity:1.000000e-02;}
+	.st7{fill:#F67615;}
+	.st8{fill:none;stroke:#707070;}
+	.st9{fill:none;stroke:#595A5C;stroke-width:20;}
+</style>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="1106" y="-500.9" width="1230.5" height="2146.1"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g id="Component_3_1" class="st0">
+			<g id="Ellipse_1" transform="translate(0 1033.074)">
+				<circle class="st1" cx="1662.5" cy="55.7" r="556.5"/>
+				<circle class="st2" cx="1662.5" cy="55.7" r="456.5"/>
+			</g>
+			<path id="Path_2" class="st2" d="M1440.3,687.2c0,0,619.2-209.6,477.5-775.1s358.7-191.9,358.7-191.9"/>
+		</g>
+	</g>
+</g>
+<g id="Group_1" transform="translate(276.576 -88)">
+	<g id="Ellipse_4" transform="translate(1243 161)">
+		<ellipse class="st3" cx="-240" cy="101.5" rx="43" ry="41.5"/>
+		<ellipse class="st3" cx="-207" cy="152.6" rx="33" ry="31.5"/>
+	</g>
+	<g id="Ellipse_3" transform="translate(956 579)">
+		<ellipse class="st4" cx="-240" cy="101.5" rx="43" ry="41.5"/>
+		<ellipse class="st5" cx="-240" cy="101.5" rx="33" ry="31.5"/>
+	</g>
+	<g id="Ellipse_2" transform="translate(396.556 114.345) rotate(43)" class="st6">
+		
+			<ellipse transform="matrix(4.117142e-06 1 -1 4.117142e-06 1011.3965 450.8033)" class="st7" cx="280.3" cy="731.1" rx="493.5" ry="441.5"/>
+		
+			<ellipse transform="matrix(4.117142e-06 1 -1 4.117142e-06 1005.8325 454.9445)" class="st8" cx="275.4" cy="730.4" rx="493" ry="441"/>
+	</g>
+	<g id="Ellipse_5" transform="translate(1028 88)">
+		<ellipse class="st4" cx="-256" cy="86" rx="27" ry="26"/>
+		<ellipse class="st3" cx="-256" cy="86" rx="22" ry="21"/>
+	</g>
+	<g id="Ellipse_6" transform="translate(-97 948)">
+		<ellipse class="st4" cx="-168" cy="171" rx="115" ry="111"/>
+		<ellipse class="st5" cx="-168" cy="171" rx="105" ry="101"/>
+	</g>
+	<g id="Ellipse_7" transform="translate(111 1059)">
+		<ellipse class="st3" cx="-261.5" cy="81" rx="21.5" ry="21"/>
+		<ellipse class="st4" cx="-261.5" cy="81" rx="11.5" ry="11"/>
+	</g>
+	<g id="Ellipse_8" transform="translate(1218.556 397.345) rotate(43)" class="st6">
+		
+			<ellipse transform="matrix(4.117142e-06 1 -1 4.117142e-06 1005.8325 454.9445)" class="st9" cx="275.4" cy="730.4" rx="493.5" ry="441.5"/>
+		
+			<ellipse transform="matrix(4.117142e-06 1 -1 4.117142e-06 1005.8325 454.9445)" class="st8" cx="275.4" cy="730.4" rx="493" ry="441"/>
+	</g>
+</g>
+</svg>

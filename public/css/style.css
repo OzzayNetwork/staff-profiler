@@ -1,0 +1,300 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*fonts*/
+
+/*font*/
+
+body {
+  /*	font-family: 'Segoe Pro Regular';*/
+  color: white !important;
+  background: #F67615;
+}
+
+label {
+  color: white !important;
+}
+
+/** {
+  transition-duration: .8s;
+}*/
+
+h2 {
+  font-size: 60px;
+  font-weight: 600;
+  /*	font-family="SegoeUI-Semibold, Segoe UI"*/
+  text-align: right;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+
+.skill {
+  background: #FEF1E7;
+  color: #F67615;
+  padding-left: 20
+}
+
+.paragraph {
+  color: white;
+  text-align: right;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.cell {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  font-size: 13px;
+}
+
+.intrests {
+  background: #E8E8E8;
+  color: #595A5C;
+}
+
+.primary-color {
+  color: #F67615;
+}
+
+.secondary-color {
+  color: #595A5C;
+}
+
+.line {
+  height: 5px;
+}
+
+.bg-sec {
+  background: #F67615;
+}
+
+.the-title {
+  font-size: 14px;
+}
+
+.the-row {
+  width: 100%;
+}
+
+.the-container {
+  min-height: 100vh;
+  display: flex;
+  background:#F67615 url("../img/circularbg2.svg") no-repeat right top;
+  background-size: 100% 100%;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.profile-container {
+  width: 100%;
+  height: 300px;
+  /* width: 200px; */
+  position: relative;
+}
+
+.profile-container img {
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 20px 44px -12px rgba(246, 118, 21, 0.35);
+}
+
+.profile-container:after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 120%;
+  border: 2px solid orange;
+  display: block;
+  width: auto;
+  border-radius: 50%;
+}
+
+.the-form {
+  background: rgba(255, 255, 255, 20%);
+  color: white;
+  font-size: 14px;
+}
+
+textarea.form-control, input.form-control, .input-field {
+  box-sizing: border-box !important;
+  padding: 1em !important;
+  font-size: 1em !important;
+  fill: rgba(255, 255, 255, 0.071);
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 64%);
+  border-radius: 0;
+  height: auto !important;
+  color: #595a5c;
+}
+
+textarea.form-control:focus, input.form-control:focus, .chips:focus {
+  border-bottom: 1px solid #595a5c !important;
+  box-shadow: 0 1px 0 0 #595a5c !important;
+  -webkit-box-shadow: 0 1px 0 0 #595a5c !important;
+  outline: none !important;
+}
+
+.chips {
+  min-height: auto;
+  padding: 0;
+}
+
+.chips .input {
+  height: auto;
+  line-height: normal;
+  font-size: 1em;
+}
+
+.chips .input::placeholder {
+  color: #858588;
+}
+
+.form-control:focus {
+  border-color: white;
+}
+
+.prof-img {
+  position: fixed;
+  z-index: 10;
+}
+
+.prof-img label, .prof-img .the-camera-icon {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+  flex-flow: column;
+	overflow: hidden;
+}
+
+.prof-img .the-camera-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.the-camera-icon svg {
+  width: 80px;
+  height: 80px;
+  opacity: 50%;
+  stroke-width: 1px;
+  opacity: 0.5;
+  transition-duration: .8s;
+}
+
+.prof-img label:hover svg {
+  opacity: 1;
+  transition-duration: .8s;
+}
+
+.greetings-img img {
+  vertical-align: middle;
+  border-style: none;
+  height: 110%;
+  position: fixed;
+  left: -5%;
+  top: 1%;
+}
+
+.btn2 {
+  border: 1px solid white;
+  background: none;
+  padding: 10px;
+  font-size: 1em;
+  font-family: "montserrat";
+  cursor: pointer;
+  transition: 0.8s;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  border-radius: 0;
+}
+
+.btn2:hover {
+  border-color: #595A5C;
+  color: white;
+}
+
+.btn2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #595A5C;
+  z-index: -1;
+  transition: 0.8s;
+}
+
+.btn2::before {
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.btn2:hover::before {
+  height: 200%;
+}
+
+#prof-picture{
+	height:auto;
+	
+	display: none;
+	width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .prof-img {
+    top: 18.5%;
+  }
+  .prof-img label, .prof-img .the-camera-icon {
+    width: 150px;
+    height: 150px;
+  }
+  .the-form {
+    background: rgba(246, 119, 45, 70%);
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .prof-img label, .prof-img .the-camera-icon {
+    width: 120px;
+    height: 120px;
+  }
+  .greetings-img img {
+    left: -40%;
+    opacity: 0.6;
+  }
+  .form-container {
+    position: absolute;
+    top: 5.5em;
+    left: 0;
+  }
+  .prof-img {
+    position: relative;
+    top: auto;
+    bottom: 0;
+  }
+  h2 {
+    font-size: 48px;
+    text-align: right;
+    width: 50%;
+    margin-left: 45%;
+  }
+  .the-camera-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+}
