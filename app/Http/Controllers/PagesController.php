@@ -9,7 +9,6 @@ use App\Post;
 class PagesController extends Controller
 {
     public function index(){
-        $posts=Post::orderBy('id','desc')->get();
         $posts=Post::orderBy('id','desc')->paginate(5);
         return view('pages.index')->with('posts',$posts);
     }

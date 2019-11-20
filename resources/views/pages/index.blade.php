@@ -22,7 +22,7 @@
                                     </a>
                                 <div>
                                     <h6 class="p-0 m-0 text-capitalize">{{$post->names}}</h6>
-                                    <p class="text-uppercase mb-0 pb-0">{{$post->tittle}}</p>
+                                    <p class="text-uppercase mb-0 pb-0">{{$post->title}}</p>
                                 </div>
                             </td>
                         </tr>
