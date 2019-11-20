@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostsController extends Controller
 {
@@ -12,6 +14,12 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
+
     public function index()
     {
         // $posts=DB::select('SELECT * FROM profile');
@@ -69,16 +77,21 @@ class PostsController extends Controller
         }
 
         //creating row
-        $post=new Post;
-        $post->names=$request->input('names');
-        $post->nickname=$request->input('aka');
+        $post = new Post;
+        $post->nickname=$request->input('nickname');
         $post->about=$request->input('about');
-        $post->unik=$request->input('unik');
-        $post->facts=$request->input('intresting');
+        $post->user_id=Auth::id();
+        $post->facts=$request->input('facts');
         $post->skills=$request->input('skills');
         $post->hobbies=$request->input('hobbies');
         $post->pic=$fileNameToStore;
-        $post->tittle=$request->input('aka');
+        $post->facebook=$request->input('facebook');
+        $post->github=$request->input('github');
+        $post->dob=$request->input('dob');
+
+        // dd($post);
+
+
 
         $post->save();
         return redirect('posts/')->with('success','profile was created');

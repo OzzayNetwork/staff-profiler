@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-12 col-lg-7 p-0 m-0">
                             <div class="col-12">
-                                <label>whats your Nicknaem</label>
+                                <label>what's your Nickname</label>
                                 <input type="text" name="nickname" placeholder="eg Maskio Pepe" autofocus class="form-control" title="write anything, we love to have fun" required >
                               </div>
                               <div class="col-12">
@@ -43,14 +43,12 @@
                               <div class="col-md-6 col-12 pl-0">
                                   <label class="text-capitalize">date of birth</label>
 
-                                  <input type='text' class="form-control" id='datetimepicker4' />  
-                                  <script type="text/javascript">
-                                    $(function () {
-                                        $('#datetimepicker4').datetimepicker();
-                                    });
-                                </script>                             
+                                  <input class="form-control" id="datepicker" value="{{ old('dob') }}"  type="text" name="dob">                           
                                 </div>
                           </div>
+                          <div class="col-12">
+                          <p>For this section, enter at least <strong>three (3)</strong> skills and at least <strong>four</strong> interests and hobbies. Press enter after each entry</p>
+                        </div>
 
                         {{-- skills and hobbies --}}
                         <div class="col-12 col-lg-6 mb-2">
@@ -63,7 +61,7 @@
                               </div>
                             <input type="file" name="cover_img" id="my-picture" class="d-none" onChange="showimage.call(this)" accept="image/gif, image/jpeg, image/png" required>
                           </div>
-                          
+                        
                         <div class="col-12 col-md-6 mb-2">
                           <label>My Skills</label>
                           <div class="chips chips-placeholder-skills" id="skills-input" title="both professional and social skills eg PHP, communication"></div>
@@ -80,12 +78,10 @@
                         </div>
                         <div class="col-12 mb-2">
                           <label>what are some of the intresting facts about you?</label>
-                          <textarea name="unik" rows="3"  cols="50"  form="usrform" class="form-control" placeholder="Intresting fact about me ..." title="dont be afraid of letting us know the special gifts and likea about you" required></textarea>
+                          <textarea name="facts" rows="3"  cols="50"  form="usrform" class="form-control" placeholder="Intresting fact about me ..." title="dont be afraid of letting us know the special gifts and likea about you" required></textarea>
                         </div>
                        
-                        <div class="col-12">
-                          <p>For this section, enter at least <strong>three (3)</strong> skills and at least <strong>four</strong> interests and hobbies. Press enter after each entry</p>
-                        </div>
+                        
 
                         
                         
@@ -113,3 +109,11 @@
       </section>
 	
     @endsection
+@section('scripts')
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
+</script>
+@endsection
