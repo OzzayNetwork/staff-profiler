@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
             'added_by' => "system",
             'title' => 'Administrator',
             'phone' => '0700123456',
+            'gender' => 'male',
         ]);
     }
 }
