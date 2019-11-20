@@ -42,7 +42,13 @@
                           <div class="col-12">
                               <div class="col-md-6 col-12 pl-0">
                                   <label class="text-capitalize">date of birth</label>
-                                <input type="url" name="dob" pattern="https?://.+" placeholder="eg https://github.com/nouvetaLtd" title="copy paste your github account link" class="form-control">
+
+                                  <input type='text' class="form-control" id='datetimepicker4' />  
+                                  <script type="text/javascript">
+                                    $(function () {
+                                        $('#datetimepicker4').datetimepicker();
+                                    });
+                                </script>                             
                                 </div>
                           </div>
 

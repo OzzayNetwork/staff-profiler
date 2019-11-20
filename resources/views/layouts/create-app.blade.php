@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+        <link rel="stylesheet" href="{{asset('css/bootstrap-datetimepicker.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -23,6 +24,9 @@
              <!-- scripts-->
         <script src="{{asset('js/jquery.min.js')}}"></script> 
         <script src="{{asset('js/materialize.min.js')}}"></script> 
+        <script src="{{asset('js/moment.min.js')}}"></script> 
+        <script src="{{asset('js/bootstrap.min.js')}}"></script> 
+        <script src="{{asset('js/bootstrap-datetimepicker.min.js')}}"></script> 
         
 
 <script>
@@ -51,25 +55,25 @@
        function hobbiesfuntion(){
         try{
 
-//creating hobby array
+        //creating hobby array
 
-var hobbyArray="";
-var numOfhobbies=hobby.length;
+            var hobbyArray="";
+            var numOfhobbies=hobby.length;
 
-//code that causes an error
-for (let x=0; x<= numOfhobbies; ++x){
+            //code that causes an error
+            for (let x=0; x<= numOfhobbies; ++x){
 
-    hobbyArray=hobbyArray.concat(hobby[x].tag).concat(";");
-    $('#the-hobbies').val(hobbyArray);
+                hobbyArray=hobbyArray.concat(hobby[x].tag).concat(";");
+                $('#the-hobbies').val(hobbyArray);
 
-}
+            }
 
-}catch(e){
+            }catch(e){
 
-functionToHandleError(e);
-}
+            functionToHandleError(e);
+            }
            
-       }
+        }
 
        function skillsfunction(){
            //code that causes an error
@@ -207,6 +211,8 @@ document.getElementById("skills-input").addEventListener("submit", function(e) {
 
 
 <script>
+
+    // image displayer
 function showimage(){
 if(this.files && this.files[0]){
 var obj=new FileReader();
@@ -218,6 +224,11 @@ image.style.display="block";
 obj.readAsDataURL(this.files[0]);
 }
 }
+// end of image displayer
+
+// date time picker
+
+// end of dae time picker
 
 </script>
 
