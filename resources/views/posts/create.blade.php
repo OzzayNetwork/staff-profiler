@@ -46,9 +46,6 @@
                                   <input class="form-control" id="datepicker" value="{{ old('dob') }}"  type="text" name="dob">                           
                                 </div>
                           </div>
-                          <div class="col-12">
-                          <p>For this section, enter at least <strong>three (3)</strong> skills and at least <strong>four</strong> interests and hobbies. Press enter after each entry</p>
-                        </div>
 
                         {{-- skills and hobbies --}}
                         <div class="col-12 col-lg-6 mb-2">
@@ -61,7 +58,7 @@
                               </div>
                             <input type="file" name="cover_img" id="my-picture" class="d-none" onChange="showimage.call(this)" accept="image/gif, image/jpeg, image/png" required>
                           </div>
-                        
+                          
                         <div class="col-12 col-md-6 mb-2">
                           <label>My Skills</label>
                           <div class="chips chips-placeholder-skills" id="skills-input" title="both professional and social skills eg PHP, communication"></div>

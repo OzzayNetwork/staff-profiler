@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('profile', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('nickname');
             $table->string('about');
             $table->string('facts');
@@ -24,8 +24,10 @@ class CreatePostsTable extends Migration
             $table->string('skills');
             $table->string('hobbies');
             $table->string('pic');
-            $table->datetime('dob');
+            $table->string('dob');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

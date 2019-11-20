@@ -19,11 +19,8 @@
                             <td class="d-flex align-items-center">
                                     
                                     <a href="{{route('posts.show', $post->id)}}" class="rounded-circle mr-3 d-flex align-items-center justify-content-center profile-pic-container">
-                                            @if($post->pic=="")
-                                                <img src="storage/cover_images/noimage.jpg" class="img">
-                                            @else
-                                                <img src="storage/cover_images/{{$post->pic}}" class="img">
-                                            @endif
+                                                <img src="cover_images/{{$post->pic}}" class="img">
+                                            
                                     </a>
                                 <div>
                                     <h6 class="p-0 m-0 text-capitalize">{{$post->names}}</h6>

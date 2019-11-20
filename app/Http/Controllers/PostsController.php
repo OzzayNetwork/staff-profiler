@@ -23,8 +23,9 @@ class PostsController extends Controller
     public function index()
     {
         // $posts=DB::select('SELECT * FROM profile');
-         $posts=Post::orderBy('id','desc')->get();
-        $posts=Post::orderBy('id','desc')->paginate(5);
+         $posts=Post::orderBy('id','desc')->paginate(5);
+
+         // dd($posts);
         return view('posts.index')->with('posts',$posts);
     }
 
@@ -69,7 +70,10 @@ class PostsController extends Controller
             //file name to store
             $fileNameToStore=$filename.'_'.time().'.'.$extension;
             //upload image
-            $path=$request->file('cover_img')->storeAs('public/cover_images',$fileNameToStore);
+
+            $destinationPath = public_path('/cover_images');
+            $path = $request->file('cover_img')->move($destinationPath, $fileNameToStore);
+            // $path=$request->file('cover_img')->storeAs('public/cover_images',$fileNameToStore);
 
         }
         else{
