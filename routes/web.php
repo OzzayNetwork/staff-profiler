@@ -32,7 +32,12 @@ Route::get('/staffs', 'PagesController@staffs');
 
 
 Route::resource('posts','PostsController');
+//users
+Route::resource('users','UsersController');
 
 
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
