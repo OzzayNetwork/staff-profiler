@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 use App\User;
 
 
@@ -16,6 +18,11 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
     public function index()
     {
         //
@@ -45,9 +52,10 @@ class UsersController extends Controller
         // dd($request->all());
 
         $validatedData = $request->validate([
-        	'email' => 'required|email|max:255',
+        	'email' => 'required|email|max:255|unique:users',
         	'phone' => 'required',
         	'name' => 'required',
+            'title' => 'required',
         ]);
 
         $password = Str::random(8);
@@ -76,7 +84,11 @@ class UsersController extends Controller
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->name = $request->name;
+        $user->title = $request->title;
+        $user->added_by = Auth::user()->name;
         $user->password = Hash::make($password);
+
+        // dd($user);
         $user->save();
 
         return redirect()->route('users.create');
