@@ -48,6 +48,28 @@
         $("#chips-click").on('click', function(){
            console.log("clicked again");
        });
+       function hobbiesfuntion(){
+        try{
+
+//creating hobby array
+
+var hobbyArray="";
+var numOfhobbies=hobby.length;
+
+//code that causes an error
+for (let x=0; x<= numOfhobbies; ++x){
+
+    hobbyArray=hobbyArray.concat(hobby[x].tag).concat(";");
+    $('#the-hobbies').val(hobbyArray);
+
+}
+
+}catch(e){
+
+functionToHandleError(e);
+}
+           
+       }
 
        function skillsfunction(){
            //code that causes an error
@@ -71,7 +93,9 @@
 
        $(document).on('keypress',function(e) {
         if(e.which == 13) {
-            skillsfunction();
+            // skillsfunction();
+            alert("enter was clicked");
+            hobbiesfuntion();
             }
         });
 
@@ -89,27 +113,10 @@
        });
        $( '#usrform' ).submit(function( event ) {
          // display chip data
-        try{
-
-            //creating hobby array
         
-            var hobbyArray="";
-            var numOfhobbies=hobby.length;
-
-            //code that causes an error
-            for (let x=0; x<= numOfhobbies; ++x){
-
-                hobbyArray=hobbyArray.concat(hobby[x].tag).concat(";");
-                $('#the-hobbies').val(hobbyArray);
-            
-        }
-
-        }catch(e){
-
-            functionToHandleError(e);
-        }
-
+         hobbiesfuntion();
         try{
+           
 
             skillsfunction();
 
@@ -134,29 +141,38 @@
 
 
 // Get the element, add a click listener...
-document.getElementById("skills-input").addEventListener("mousemove", function(e) {
+document.getElementById("you_hover").addEventListener("click", function(e) {
 	    // e.target is the CHANGING Element!
 	    // If it was an input item
-	    if(e.target && e.target.matches(".input")) {
+	    if(e.target && e.target.matches("input")) {
 		// List item found!  Output the ID!
 		// geting num of skills the user has input
-        var numOfSkills=skills.length;
-        //creating skills array
-        var skillArray="[";
-        for (let i=0; i<=numOfSkills; ++i){
-            if(i==numOfSkills-1){
-               
-                skillArray=skillArray.concat("'").concat(skills[i].tag).concat("']");
-                $('#the-skills').val(skillArray);
-            }
-            if(i!=numOfSkills-1){
-                
-                skillArray=skillArray.concat("'").concat(skills[i].tag).concat("',");
-                $('#the-skills').val(skillArray);
-            }
-        }
+        hobbiesfuntion();
 	}
 });
+
+// Get the element, add a click listener...
+document.getElementById("you_hover").addEventListener("click", function(e) {
+	    // e.target is the CHANGING Element!
+	    // If it was an input item
+	    if(e.target && e.target.matches("textarea")) {
+		// List item found!  Output the ID!
+		// geting num of skills the user has input
+        hobbiesfuntion();
+	}
+});
+
+// Get the element, add a click listener...
+document.getElementById("you_hover").addEventListener("pointermove", function(e) {
+	    // e.target is the CHANGING Element!
+	    // If it was an input item
+	    if(e.target && e.target.matches("#usrform")) {
+		// List item found!  Output the ID!
+		// geting num of skills the user has input
+        hobbiesfuntion();
+	}
+});
+
 
 
 // Get the element, add a click listener...
