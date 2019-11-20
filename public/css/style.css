@@ -20,7 +20,7 @@ label {
 }*/
 
 h2 {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 600;
   /*	font-family="SegoeUI-Semibold, Segoe UI"*/
   text-align: right;
@@ -41,7 +41,7 @@ h2 {
 .paragraph {
   color: white;
   text-align: right;
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
 }
 
@@ -92,6 +92,15 @@ h2 {
   background-attachment: fixed;
 }
 
+.the-container2 {
+  min-height: 100vh;
+  display: flex;
+  background:#F67615 url("../img/circularbg4.svg") no-repeat right top;
+  background-size: 100% 100%;
+  background-position: top;
+  background-attachment: fixed;
+}
+
 .profile-container {
   width: 100%;
   height: 300px;
@@ -120,6 +129,10 @@ h2 {
   background: rgba(255, 255, 255, 20%);
   color: white;
   font-size: 14px;
+}
+
+.form-container{
+  z-index: 100;
 }
 
 textarea.form-control, input.form-control, .input-field {
@@ -161,13 +174,13 @@ textarea.form-control:focus, input.form-control:focus, .chips:focus {
 }
 
 .prof-img {
-  position: fixed;
+  /* position: fixed; */
   z-index: 10;
 }
 
 .prof-img label, .prof-img .the-camera-icon {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 250px;
   background: rgba(255, 255, 255, 20%);
   display: flex;
   justify-content: center;
@@ -200,12 +213,12 @@ textarea.form-control:focus, input.form-control:focus, .chips:focus {
 }
 
 .greetings-img img {
-  vertical-align: middle;
-  border-style: none;
-  height: 110%;
-  position: fixed;
-  left: -5%;
-  top: 1%;
+   vertical-align: middle;
+    border-style: none;
+    height: 100%;
+    position: fixed;
+    right: 0%;
+    bottom: -60px;
 }
 
 .btn2 {
