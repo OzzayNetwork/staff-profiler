@@ -10,6 +10,9 @@
 body{
 /*	font-family: 'Segoe Pro Regular';*/
 }
+.user-phone{
+	color: #28a745;
+}
 
 
 h2{
@@ -121,9 +124,13 @@ h2{
 }
 
 .profile-table p{
-	font-size: 12px;
-	font-weight: bold;
-	color: #595a5c;;
+	font-size: 10;
+    font-weight: bold;
+    color: #f67614;
+}
+
+.h6, h6 {
+    font-size: 1.1em;
 }
 
 

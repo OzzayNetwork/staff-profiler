@@ -217,7 +217,7 @@ textarea.form-control:focus, input.form-control:focus, .chips:focus {
     border-style: none;
     height: 100%;
     position: fixed;
-    right: 0%;
+    left: 0%;
     bottom: -60px;
 }
 
@@ -267,6 +267,7 @@ textarea.form-control:focus, input.form-control:focus, .chips:focus {
 	display: none;
 	width: 100%;
 }
+
 
 @media only screen and (max-width: 768px) {
   .prof-img {

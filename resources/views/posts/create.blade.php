@@ -43,7 +43,7 @@
                               <div class="col-md-6 col-12 pl-0">
                                   <label class="text-capitalize">date of birth</label>
 
-                                  <input class="form-control" id="datepicker" value="{{ old('dob') }}"  type="text" name="dob">                           
+                                  <input class="form-control" placeholder="select your date of birth" id="datepicker" value="{{ old('dob') }}"  type="text" name="dob">                           
                                 </div>
                           </div>
 

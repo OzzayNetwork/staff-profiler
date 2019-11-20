@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/materialize.css')}}">
         <link rel="stylesheet" href="{{asset('css/nw_staff_css.css')}}">
@@ -23,6 +23,10 @@
             <script src="{{asset('js/materialize.min.js')}}"></script> 
         	<script src="{{asset('js/dataTables.bootstrap4.min.js')}}"></script>
             <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+
+            <script>
+                feather.replace();
+            </script>
 	
             <!-- scripts-->
     </body>

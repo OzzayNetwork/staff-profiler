@@ -99,7 +99,7 @@
        $(document).on('keypress',function(e) {
         if(e.which == 13) {
             // skillsfunction();
-            alert("enter was clicked");
+           
             hobbiesfuntion();
             }
         });

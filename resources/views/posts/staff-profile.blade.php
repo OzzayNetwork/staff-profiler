@@ -4,14 +4,15 @@
 		<div class="row m-5 the-row text-capitalize">
 			<div class="col-lg-6 col-md-8 p-3 col-sm-12">
 				<h2 class="text-capitalize mb-3">Welcome, new staff!</h2>
-				<h5 class="mb-2">{{$post->names}}~{{$post->nickname}}</h5>
-				<p class="text-uppercase primary-color mb-2 the-title">{{$post->title}}</p>				
+				<h5 class="mb-2">{{$post->user->name}}~{{$post->nickname}}</h5>
+				<p class="text-uppercase primary-color mb-2 the-title">{{$post->user->title}}</p>				
 				<div class="col-3 mb-3 line secondary-color bg-sec mb-3"></div>
-				<p class="mb-3 mt-3">{{$post->about}}</p>
+				<h5 class="title mb-3 text-capitalize">about me</h5>
+				<p class="mb-4 mt-3">{{$post->about}}</p>
 				
 				<div class="skills col-12 ml-0 pl-0 mb-3">
 					<h5 class="title mb-3">Skills</h5>
-					<div class="skills-container">
+					<div class="skills-container mb-4">
 							@if($myskillsArray>0)
 							@foreach($myskillsArray as $skill)
 								<span class="skill p-2 text-uppercase cell">
@@ -22,7 +23,7 @@
 					</div>
 				</div>
 				
-				<div class="intresrts col-12 col-12 ml-0 pl-0 my-3">
+				<div class="intresrts col-12 col-12 ml-0 pl-0 mt-3 mb-4">
 					<h5 class="title text-capitalize">intrest & hobbies</h5>
 					<div class="skills-container">
 							@if($myhobbiesArray>0)
@@ -39,7 +40,7 @@
 				<div class="skills col-12 ml-0 pl-0 mb-3 mt-3">
 					
 					
-					<h6 class="title text-capitalize"><i>Whats ODD about Me</i></h6>
+						<h5 class="title text-capitalize">interesting facts about me</h5>
 					<p class="">{{$post->facts}}</p>
 				</div>
 				

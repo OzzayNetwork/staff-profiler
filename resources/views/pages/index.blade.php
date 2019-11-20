@@ -21,7 +21,7 @@
                                     <img src="../img/116838.jpg" class="img rounded-circle mr-3">
                                     </a>
                                 <div>
-                                    <h6 class="p-0 m-0 text-capitalize">{{$post->names}}</h6>
+                                    <h6 class="p-0 m-0 text-capitalize">{{$post->name}}</h6>
                                     <p class="text-uppercase mb-0 pb-0">{{$post->title}}</p>
                                 </div>
                             </td>
