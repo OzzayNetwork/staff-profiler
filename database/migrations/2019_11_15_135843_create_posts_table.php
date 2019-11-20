@@ -15,15 +15,16 @@ class CreatePostsTable extends Migration
     {
         Schema::create('profile', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('names');
+            $table->string('user_id');
             $table->string('nickname');
             $table->string('about');
-            $table->string('unik');
             $table->string('facts');
+            $table->string('facebook');
+            $table->string('github')->nullable();
             $table->string('skills');
             $table->string('hobbies');
             $table->string('pic');
-            $table->string('tittle');
+            $table->string('dob');
             $table->timestamps();
         });
     }
