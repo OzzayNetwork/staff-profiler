@@ -41,14 +41,13 @@ class PostsController extends Controller
         // dd($request->all());
 
         $this->validate($request,[
-            'names'=>'required',
-            'aka'=>'required',
+            'nickname'=>'required',
+            'facts'=>'required',
             'about'=>'required',
-            'unik'=>'required',
             'cover_img'=>'image|required|max:1999',
-            'intresting'=>'required'
-            // 'skills'=>'required',
-            // 'hobbies'=>'required'
+            'skills'=>'required',
+            'dob'=>'required',
+            'hobbies'=>'required',
         ]);
 
         //handle file upload

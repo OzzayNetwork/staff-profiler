@@ -26,7 +26,7 @@
                         <div class="col-12 col-lg-7 p-0 m-0">
                             <div class="col-12">
                                 <label>whats your Nicknaem</label>
-                                <input type="text" name="names" placeholder="eg Maskio Pepe" autofocus class="form-control" title="write anything, we love to have fun" required >
+                                <input type="text" name="nickname" placeholder="eg Maskio Pepe" autofocus class="form-control" title="write anything, we love to have fun" required >
                               </div>
                               <div class="col-12">
                                 <label>facebook (optional)</label>
@@ -42,7 +42,7 @@
                           <div class="col-12">
                               <div class="col-md-6 col-12 pl-0">
                                   <label class="text-capitalize">date of birth</label>
-                                <input type="url" name="github" pattern="https?://.+" placeholder="eg https://github.com/nouvetaLtd" title="copy paste your github account link" class="form-control">
+                                <input type="url" name="dob" pattern="https?://.+" placeholder="eg https://github.com/nouvetaLtd" title="copy paste your github account link" class="form-control">
                                 </div>
                           </div>
 

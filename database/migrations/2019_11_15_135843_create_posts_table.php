@@ -19,12 +19,12 @@ class CreatePostsTable extends Migration
             $table->string('nickname');
             $table->string('about');
             $table->string('facts');
-            $table->string('facebook');
+            $table->string('facebook')->nullable();
             $table->string('github')->nullable();
             $table->string('skills');
             $table->string('hobbies');
             $table->string('pic');
-            $table->string('dob');
+            $table->datetime('dob');
             $table->timestamps();
         });
     }
