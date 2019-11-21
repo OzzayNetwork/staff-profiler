@@ -19,9 +19,11 @@
             @yield('content')
 
            <!-- scripts-->
+            <script src="{{asset('js/popper.min.js')}}"></script> 
             <script src="{{asset('js/jquery.min.js')}}"></script> 
             <script src="{{asset('js/materialize.min.js')}}"></script> 
-        	<script src="{{asset('js/dataTables.bootstrap4.min.js')}}"></script>
+            <script src="{{asset('js/dataTables.bootstrap4.min.js')}}"></script>
+            <script src="{{asset('js/bootstrap.min.js')}}"></script> 
             <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
 
             <script>

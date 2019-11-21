@@ -217,7 +217,7 @@ textarea.form-control:focus, input.form-control:focus, .chips:focus {
     border-style: none;
     height: 100%;
     position: fixed;
-    left: 0%;
+    right: 0%;
     bottom: -60px;
 }
 

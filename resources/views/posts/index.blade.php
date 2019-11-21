@@ -12,11 +12,11 @@
                 <th></th>
             </tr>
         </thead>
-        	<tbody>
+        	<tbody class="">
                 @if(count($posts)>0)
                     @foreach($posts as $post)
-                         <tr class="d-flex justify-content-between">
-                            <td class="d-flex align-items-center w-50">
+                         <tr class="d-flex justify-content-between row">
+                            <td class="d-flex align-items-center w-25">
                                     
                                     <a href="{{route('posts.show', $post->id)}}" class="rounded-circle mr-3 d-flex align-items-center justify-content-center profile-pic-container">
                                                 <img src="cover_images/{{$post->pic}}" class="img">
@@ -28,15 +28,26 @@
                                 </div>
                             </td>
 
-                            <td class="d-flex align-items-center w-50 justify-content-end">
+                            <td class="d-flex align-items-center w-75 justify-content-end">
 
-                                    <span class="mr-5 user-phone"><i data-feather="phone-call" class="mr-2"></i><strong>{{$post->user->phone}}</strong></span>
+                                    <span class="mr-5 user-phone"><i data-feather="phone-call" class="mr-2"></i>{{$post->user->phone}}</span>
                                     @if($post->github!="")
                                          <a href="{{$post->github}}" target="new" class="git-acc ml-3" title="view {{$post->user->name}}'s github profile"><i data-feather="github"></i></a>
                                     @endif
                                     @if($post->facebook!="")
-                                    <a href="{{$post->facebook}}" target="new" class="facebook-acc ml-3" title="view {{$post->user->name}}'s facebook account page"><i data-feather="facebook"></i></a>
+                                    <a href="{{$post->facebook}}" target="new" class="facebook-acc mx-3" title="view {{$post->user->name}}'s facebook account page"><i data-feather="facebook"></i></a>
+
                                     @endif
+                                    <div class="dropdown dropleft">
+                                        <span class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                                            <i data-feather="more-vertical"></i>
+                                        </span>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                          </div>
+                                      </div>
                             </td>
                         </tr>
                     @endforeach
