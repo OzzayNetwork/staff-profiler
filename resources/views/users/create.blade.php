@@ -22,9 +22,22 @@
                 @csrf
                   <div class="row">
                     <div class="col-12 ">
-                      <label>Employee's Names</label>
+                      <label>Employee's Name</label>
                       <input type="text" name="name" placeholder="Enter the employee's full name" autofocus class="form-control" name="name" value="{{old('name')}}" required>
                     </div>
+                    <div class="form-group col-12">
+                      <label for="gender">Select the gender</label>
+                      <select class="form-control" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="gender"></label>
+                      
+                    </div>
+
                     <div class="col-12">
                       <label>Employee's Title</label>
                       <input type="text" placeholder="Enter employee's title eg Backend Developer" class="form-control" name="title" value="{{old('title')}}" required>
@@ -42,22 +55,7 @@
                       <label>Enter the employee's phone number</label>
                       <input rows="3"  cols="50"  form="usrform" class="form-control" placeholder="Phone number" name="phone" value="{{old('phone')}}" required></input>
                     </div>
-                    <!-- <div class="col-12 mb-2">
-                      <label>What are some interesting facts about you?</label>
-                      <textarea rows="3" cols="50" name="intresting" form="usrform" class="form-control" placeholder="Interesting fact about me ..."></textarea>
-                    </div>
-                    <div class="col-12">
-                      <p>For this section, enter at least three skills and at lead four items on the interests and hobbies section. remember to press enter once you are done with entering an item into the text box. </p>
-                    </div>
-                    <div class="col-12 mb-2">
-                      <label>My Skills</label>
-                      <div class="chips chips-placeholder-skills" id="skills-input"></div>
-                    </div>
-                    <div class="col-12 mb-2">
-                      <label>Interests and Hobbies</label>
-                      <div class="chips chips-placeholder" id="hobby-input"></div>
-                      <input type="file" name="cover_img" id="my-picture" class="d-none" onChange="showimage.call(this)" accept="image/gif, image/jpeg, image/png">
-                    </div> -->
+                    
                     <div class="col-12 d-flex flex-column mb-2 mt-3">
                         @include('includes.messages')
                       <button class="btn2" type="submit">SUBMIT</button>

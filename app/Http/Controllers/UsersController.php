@@ -56,6 +56,7 @@ class UsersController extends Controller
         	'phone' => 'required',
         	'name' => 'required',
             'title' => 'required',
+            'gender' => 'required',
         ]);
 
         $password = Str::random(8);
@@ -85,6 +86,7 @@ class UsersController extends Controller
         $user->phone = $request->phone;
         $user->name = $request->name;
         $user->title = $request->title;
+        $user->gender = $request->gender;
         $user->added_by = Auth::user()->name;
         $user->password = Hash::make($password);
 
