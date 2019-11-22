@@ -111,7 +111,15 @@ class PostsController extends Controller
 
 
         $post->save();
-        return redirect('posts/')->with('success','profile was created');
+        if(Auth::user()->is_admin == 1)
+        {
+            return redirect('posts/')->with('success','profile was created');
+        }
+
+        else
+        {
+            return redirect('posts/')->with('success','profile was created and awaits approval');
+        }
     }
 
     /**

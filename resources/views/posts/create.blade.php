@@ -10,6 +10,7 @@
                     </div>
                   
                   <div class="the-form p-md-5 p-3">
+                    @include('includes.messages')
                   <form method="POST" name="usrform" enctype="multipart/form-data" id="usrform" action="{{route('posts.store')}}">
                     @csrf
                       <div class="row">
@@ -83,7 +84,7 @@
                         
                         
                         <div class="col-12 d-flex flex-column mb-2 mt-3">
-                            @include('includes.messages')
+                            
                           <button class="btn2" type="submit">SUBMIT</button>
                         
                         </div>

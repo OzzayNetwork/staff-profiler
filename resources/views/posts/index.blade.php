@@ -8,6 +8,15 @@
 				<hr>
 				<table id="example" class="table  p-3 profile-table mt-3" style="width:100%">
         <thead>
+            @if(Session::has('success'))
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="message" class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
             <tr class="d-none">
                 <th></th>
             </tr>
