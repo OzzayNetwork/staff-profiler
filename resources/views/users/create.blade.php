@@ -21,13 +21,14 @@
               <form method="POST" name="usrform" enctype="multipart/form-data" id="usrform" action="{{route('users.store')}}">
                 @csrf
                   <div class="row">
-                    <div class="col-12 ">
+                    <div class="col-6 ">
                       <label>Employee's Name</label>
                       <input type="text" name="name" placeholder="Enter the employee's full name" autofocus class="form-control" name="name" value="{{old('name')}}" required>
                     </div>
-                    <div class="form-group col-12">
+                    <div class="form-group col-6">
                       <label for="gender">Select the gender</label>
-                      <select class="form-control" id="gender">
+                      <select class="form-control" id="gender" name="gender">
+                        <option value=" ">--employee's gender--</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         
