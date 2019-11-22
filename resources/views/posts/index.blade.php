@@ -38,15 +38,6 @@
                             </td>
                            
                             <td class="d-flex align-items-center w-75 justify-content-end">
-                                @if(Auth::user()->is_admin)
-                                    @if($post->approval_status != 1)
-                                        <a href="{{route('approve-profile', ['id' => $post->id])}}">Approve this employee's profile</a>
-                                    @endif
-                                    @if($post->approval_status = 1 && $post->user->is_admin == 0)
-                                    <a href="{{route('approve-profile', ['id' => $post->id])}}">Disapprove this employee's profile</a>
-                                    @endif
-                                @endif
-
                                     <span class="mr-5 user-phone"><i data-feather="phone-call" class="mr-2"></i>{{$post->user->phone}}</span>
                                     @if($post->github!="")
                                          <a href="{{$post->github}}" target="new" class="git-acc ml-3" title="view {{$post->user->name}}'s github profile"><i data-feather="github"></i></a>
@@ -60,7 +51,15 @@
                                             <i data-feather="more-vertical"></i>
                                         </span>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Edit</a>
+                                            @if(Auth::user()->is_admin)
+                                            @if($post->approval_status != 1)
+                                                <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Approve profile</a>
+                                            @endif
+                                            @if($post->approval_status = 1 && $post->user->is_admin == 0)
+                                            <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Disapprove profile</a>
+                                            @endif
+                                        @endif
+                                            <a class="dropdown-item" href="#">Edit profile</a>
                                             <a class="dropdown-item" href="#">Make admin</a>
                                             <a class="dropdown-item" href="#">Freeze account</a>
                                           </div>
