@@ -140,4 +140,16 @@ class UsersController extends Controller
     {
         //
     }
+
+    public function makeAdmin($id)
+    {
+        $user = User::find($id);
+
+        $user->is_admin = !$user->is_admin;
+
+        $user->save();
+
+        return redirect()->back()->with('success', 'The user is now an admin');
+    }
+
 }

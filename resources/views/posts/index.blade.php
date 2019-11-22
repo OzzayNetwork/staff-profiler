@@ -72,7 +72,7 @@
                                             @endif
                                         @endif
                                             <a class="dropdown-item" href="#">Edit profile</a>
-                                            <a class="dropdown-item" href="#">Make admin</a>
+                                            <a class="dropdown-item" href="{{route('make-admin', ['id' => $post->user_id])}}">Make admin</a>
                                             <a class="dropdown-item" href="#">Freeze account</a>
                                           </div>
                                       </div>
