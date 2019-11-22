@@ -25,6 +25,7 @@ class CreatePostsTable extends Migration
             $table->string('hobbies');
             $table->string('pic');
             $table->string('dob');
+            $table->integer('approval_status')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
