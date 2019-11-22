@@ -36,8 +36,16 @@
                                     <p class="text-uppercase mb-0 pb-0">{{$post->user->title}}</p>
                                 </div>
                             </td>
-
+                           
                             <td class="d-flex align-items-center w-75 justify-content-end">
+                                @if(Auth::user()->is_admin)
+                                    @if($post->approval_status != 1)
+                                        <a href="{{route('approve-profile', ['id' => $post->id])}}">Approve this employee's profile</a>
+                                    @endif
+                                    @if($post->approval_status = 1 && $post->user->is_admin == 0)
+                                    <a href="{{route('approve-profile', ['id' => $post->id])}}">Disapprove this employee's profile</a>
+                                    @endif
+                                @endif
 
                                     <span class="mr-5 user-phone"><i data-feather="phone-call" class="mr-2"></i>{{$post->user->phone}}</span>
                                     @if($post->github!="")
@@ -52,9 +60,9 @@
                                             <i data-feather="more-vertical"></i>
                                         </span>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Make admin</a>
+                                            <a class="dropdown-item" href="#">Freeze account</a>
                                           </div>
                                       </div>
                             </td>

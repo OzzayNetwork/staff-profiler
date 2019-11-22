@@ -32,6 +32,7 @@ Route::get('/staffs', 'PagesController@staffs');
 
 
 Route::resource('posts','PostsController');
+Route::get('approve-profile/{id}', 'PostsController@approveProfile')->name('approve-profile');
 //users
 Route::resource('users','UsersController');
 

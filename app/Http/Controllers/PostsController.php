@@ -181,4 +181,15 @@ class PostsController extends Controller
     {
         //
     }
+
+    public function approveProfile($id)
+    {
+        $post = Post::find($id);
+
+        $post->approval_status = 1;
+
+        $post->save();
+
+        return redirect('posts/')->with('success', 'Employees profile has been approved');
+    }
 }
