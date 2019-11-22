@@ -23,7 +23,15 @@ class PostsController extends Controller
     public function index()
     {
         // $posts=DB::select('SELECT * FROM profile');
-         $posts=Post::orderBy('id','desc')->paginate(5);
+        if(Auth::user()->is_admin == 1)
+        {
+            $posts=Post::orderBy('id','desc')->paginate(5);   
+        }
+        else
+        {
+            $posts = Post::where('approval_status', 1)->orderBy('id','desc')->paginate(5);
+        }
+         
 
          // dd($posts);
         return view('posts.index')->with('posts',$posts);
@@ -92,6 +100,11 @@ class PostsController extends Controller
         $post->facebook=$request->input('facebook');
         $post->github=$request->input('github');
         $post->dob=$request->input('dob');
+        if(Auth::user()->is_admin)
+        {
+            $post->approval_status = 1;
+        }
+
 
         // dd($post);
 
