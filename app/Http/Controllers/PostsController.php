@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -198,3 +199,5 @@ class PostsController extends Controller
         return redirect('posts/')->with('success', 'Employees profile has been approved');
     }
 }
+
+

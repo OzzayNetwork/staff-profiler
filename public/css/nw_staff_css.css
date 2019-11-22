@@ -19,6 +19,9 @@ body{
     display: flex;
     justify-content: center;
 }
+.no-wrap{
+  white-space: nowrap;
+}
 
 
 h2{

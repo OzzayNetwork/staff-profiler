@@ -32,13 +32,25 @@
                                             
                                     </a>
                                 <div>
-                                    <h6 class="p-0 m-0 text-capitalize">{{$post->user->name}}</h6>
+                                    <h6 class="p-0 m-0 text-capitalize no-wrap">
+                                        {{explode(' ', $post->user->name)[0]}} {{explode(' ', $post->user->name)[1]}}  
+                                        @if(!is_null($post->user->created_at))
+                                        @if($post->user->created_at->diffInDays(Carbon\Carbon::now()) <= 7)
+                                        
+                                        <span class="badge badge-pill badge-warning">New</span>
+                                        @endif
+                                    @endif</h6>
+
+
                                     <p class="text-uppercase mb-0 pb-0">{{$post->user->title}}</p>
+
                                 </div>
                             </td>
                            
                             <td class="d-flex align-items-center w-75 justify-content-end">
+
                                     <span class="mr-5 user-phone"><i data-feather="phone-call" class="mr-2"></i>{{$post->user->phone}}</span>
+
                                     @if($post->github!="")
                                          <a href="{{$post->github}}" target="new" class="git-acc ml-3" title="view {{$post->user->name}}'s github profile"><i data-feather="github"></i></a>
                                     @endif
