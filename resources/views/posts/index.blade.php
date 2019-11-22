@@ -64,14 +64,19 @@
                                         </span>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             @if(Auth::user()->is_admin)
-                                            @if($post->approval_status != 1)
-                                                <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Approve profile</a>
+                                                @if($post->approval_status != 1)
+                                                    <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Approve profile</a>
+                                                @endif
+                                                @if($post->approval_status = 1 && $post->user->is_admin == 0)
+                                                <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Disapprove profile</a>
+                                                @endif
                                             @endif
-                                            @if($post->approval_status = 1 && $post->user->is_admin == 0)
-                                            <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Disapprove profile</a>
-                                            @endif
-                                        @endif
                                             <a class="dropdown-item" href="#">Edit profile</a>
+                                            @if($post->user->is_admin)
+                                            <a class="dropdown-item" href="{{route('make-admin', ['id' => $post->user_id])}}">Remove admin</a>
+                                            @else
+                                            <a class="dropdown-item" href="{{route('make-admin', ['id' => $post->user_id])}}">Make admin</a>
+                                            @endif
                                             <a class="dropdown-item" href="{{route('make-admin', ['id' => $post->user_id])}}">Make admin</a>
                                             <a class="dropdown-item" href="#">Freeze account</a>
                                           </div>

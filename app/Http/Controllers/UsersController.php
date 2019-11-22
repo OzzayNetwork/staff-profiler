@@ -149,7 +149,15 @@ class UsersController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with('success', 'The user is now an admin');
+        if($user->is_admin == 1)
+        {
+            return redirect()->back()->with('success', 'The user is now an admin');
+        }
+        
+        else
+        {
+            return redirect()->back()->with('success', 'The user is no longer an admin');
+        }
     }
 
 }
