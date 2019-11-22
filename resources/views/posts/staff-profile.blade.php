@@ -3,8 +3,8 @@
 <section class="container-fluid the-container">
 		<div class="row m-5 the-row text-capitalize">
 			<div class="col-lg-6 col-md-8 p-3 col-sm-12">
-				<h2 class="text-capitalize mb-3">Welcome, new staff!</h2>
-				<h5 class="mb-2">{{$post->user->name}}~{{$post->nickname}}</h5>
+				<h2 class="text-capitalize mb-3">{{$firstname}}'s profile</h2>
+				<h5 class="mb-2">{{$post->user->name}} a.k.a {{$post->nickname}}</h5>
 				<p class="text-uppercase primary-color mb-2 the-title">{{$post->user->title}}</p>				
 				<div class="col-3 mb-3 line secondary-color bg-sec mb-3"></div>
 				<h5 class="title mb-3 text-capitalize">about me</h5>

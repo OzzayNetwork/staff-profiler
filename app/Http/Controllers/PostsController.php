@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -132,17 +133,21 @@ class PostsController extends Controller
     {
         
         $post=Post::find($id);
+        $employee = User::where('id', $post->user_id)->first();
+
         $skillsNum=substr_count($post->skills,";");
         $myhobbies=($post->hobbies);
         $myskills=($post->skills);
 
         $myhobbiesArray=array_filter(explode(';',$myhobbies));
         $myskillsArray=array_filter(explode(';',$myskills));
-        // dd($myskillsArray);
+
+        $firstname = explode(' ',$employee->name)[0];
         $data=[
             'post'=>$post,
            'myskillsArray'=> $myskillsArray,
-           'myhobbiesArray'=>$myhobbiesArray
+           'myhobbiesArray'=>$myhobbiesArray,
+           'firstname' => $firstname
            
         ];
         return view('posts.staff-profile')->with($data);
