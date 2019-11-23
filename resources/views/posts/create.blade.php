@@ -1,5 +1,7 @@
+
 @extends('layouts.create-app')
    @section('content')
+   @include('includes.nav')
    <section class="container-fluid the-container2 p-5">
         <div id="you_hover" class="row the-row">
             <div class="col-12 col-md-9 col-lg-8 col-xl-6 form-container">

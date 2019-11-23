@@ -1,6 +1,7 @@
 @extends('layouts.app')
    @section('content')
 <section class="container-fluid the-container">
+		@include('includes.nav')
 		<div class="row m-5 the-row text-capitalize">
 			<div class="col-lg-6 col-md-8 p-3 col-sm-12">
 				<h2 class="text-capitalize mb-3">{{$firstname}}'s profile</h2>

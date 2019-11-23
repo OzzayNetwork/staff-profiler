@@ -132,7 +132,7 @@ h2 {
 }
 
 .form-container{
-  z-index: 100;
+  z-index: 50;
 }
 
 textarea.form-control, input.form-control, .input-field {

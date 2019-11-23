@@ -1,6 +1,8 @@
 @extends('layouts.create-app')
    @section('content')
+   @include('includes.nav')
    <section class="container-fluid the-container p-5">
+     
         <div class="row the-row">
           <div class="col-12 col-md-3 col-lg-4 col-xl-6 greet-img h-100">
             <div class="prof-img d-none">

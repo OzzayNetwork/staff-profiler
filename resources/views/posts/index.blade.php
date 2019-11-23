@@ -1,5 +1,6 @@
 @extends('layouts.app')
    @section('content')
+   @include('includes.nav')
    <section class="container-fluid the-container">
 		<div class="row m-5 text-capitalize the-profile-table">
 			<div class="col-12">
