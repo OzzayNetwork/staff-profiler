@@ -140,4 +140,43 @@ class UsersController extends Controller
     {
         //
     }
+
+    public function makeAdmin($id)
+    {
+        $user = User::find($id);
+
+        $user->is_admin = !$user->is_admin;
+
+        $user->save();
+
+        if($user->is_admin == 1)
+        {
+            return redirect()->back()->with('success', 'The user is now an admin');
+        }
+        
+        else
+        {
+            return redirect()->back()->with('success', 'The user is no longer an admin');
+        }
+    }
+
+    public function activateUser($id)
+    {
+        $user = User::find($id);
+
+        $user->acc_status = !$user->acc_status;
+
+        $user->save();
+
+        if($user->acc_status == 1)
+        {
+            return redirect()->back()->with('success', 'The employees account is active');
+        }
+        
+        else
+        {
+            return redirect()->back()->with('success', 'The employee account is frozen');
+        }
+    }
+
 }
