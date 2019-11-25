@@ -25,19 +25,26 @@ class PostsController extends Controller
     public function index()
     {
         // $posts=DB::select('SELECT * FROM profile');
-        if(Auth::user()->is_admin == 1)
-        {
-            $posts=Post::orderBy('id','desc')->paginate(5);   
-        }
-        else
-        {
-            $posts = Post::where('approval_status', 1)->orderBy('id','desc')->paginate(5);
-        }
-         
+        if(Auth::user()->post){
+            if(Auth::user()->is_admin == 1)
+            {
+                $posts=Post::orderBy('id','desc')->paginate(5);   
+            }
+            else
+            {
+                $posts = Post::where('approval_status', 1)->orderBy('id','desc')->paginate(5);
+            }
+             
 
-         // dd($posts);
-        return view('posts.index')->with('posts',$posts);
-    }
+             // dd($posts);
+            return view('posts.index')->with('posts',$posts);
+        }
+
+        else{
+            return redirect('posts/create');
+        }
+
+        }
 
     /**
      * Show the form for creating a new resource.

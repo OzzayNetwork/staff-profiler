@@ -74,9 +74,7 @@
 
                                                 @if($post->approval_status != 1)
                                                     <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Approve profile</a>
-                                                @endif
-
-                                                @if($post->approval_status = 1 && $post->user->is_admin == 0)
+                                                @elseif($post->approval_status = 1 && $post->user->is_admin == 0)
                                                 <a class="dropdown-item" href="{{route('approve-profile', ['id' => $post->id])}}">Disapprove profile</a>
                                                 @endif
 
@@ -92,7 +90,9 @@
                                                 <a class="dropdown-item" href="{{route('activate-user', ['id' => $post->user_id])}}">Activate user</a>
                                                 @endif
                                             @endif
+                                            @if($post->user_id == Auth::id()) 
                                             <a class="dropdown-item" href="#">Edit profile</a>
+                                            @endif
                                             
                                           </div>
                                       </div>
