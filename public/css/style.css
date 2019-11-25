@@ -269,7 +269,10 @@ textarea.form-control:focus, input.form-control:focus, .chips:focus {
 }
 .no-wrap{
   white-space: nowrap;
+}.opacity-1{
+	opacity: 1 !important;
 }
+
 
 
 @media only screen and (max-width: 768px) {

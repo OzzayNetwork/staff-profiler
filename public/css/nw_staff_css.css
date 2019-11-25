@@ -166,6 +166,10 @@ h2{
 	font-size: 5.5rem;
 }
 
+.opacity-1{
+	opacity: 1;
+}
+
 
 @media(max-width:776px)
 {
