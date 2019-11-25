@@ -5,7 +5,16 @@
             <li><a href="/announcements" data-content="Office related announcements">announcements</a></li>
             <li><a href="/announcements" data-content="Upcoming events and staff birthdays">events</a></li>
             <li><a href="/users/create" data-content="Register a new account">create account</a></li>
-            <li><a href="#" data-content="log me out">logout</a></li>
+            <li><a class="dropdown-item" data-content="log me out" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form></li>
+            
           </ul>
         </nav>
       </div>
