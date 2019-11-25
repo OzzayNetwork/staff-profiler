@@ -36,7 +36,7 @@ Route::get('approve-profile/{id}', 'PostsController@approveProfile')->name('appr
 //users
 Route::resource('users','UsersController');
 Route::get('make-admin/{id}', 'UsersController@makeAdmin')->name('make-admin');
-Route::get('activate-user/{id}', 'UsersController@activateUser')->name('make-admin');
+Route::get('activate-user/{id}', 'UsersController@activateUser')->name('activate-user');
 
 
 

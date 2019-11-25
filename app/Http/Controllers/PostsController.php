@@ -198,6 +198,8 @@ class PostsController extends Controller
 
         return redirect('posts/')->with('success', 'Employees profile has been approved');
     }
+
+    
 }
 
 

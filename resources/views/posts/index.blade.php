@@ -80,8 +80,11 @@
                                                 <a class="dropdown-item" href="{{route('make-admin', ['id' => $post->user_id])}}">Make admin</a>
                                                 @endif
 
-                                                
-                                                <a class="dropdown-item" href="#">Freeze account</a>
+                                                @if($post->user->acc_status)
+                                                <a class="dropdown-item" href="{{route('activate-user', ['id' => $post->user_id])}}">Freeze account</a>
+                                                @else
+                                                <a class="dropdown-item" href="{{route('activate-user', ['id' => $post->user_id])}}">Activate user</a>
+                                                @endif
                                             @endif
                                             <a class="dropdown-item" href="#">Edit profile</a>
                                             
