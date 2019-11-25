@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 use App\User;
 
@@ -60,40 +62,46 @@ class UsersController extends Controller
         ]);
 
         $password = Str::random(8);
-
+        $message = 'Welcome to the Nouveta family! We hope this is the start of a beautiful partnership where we can learn from each other. You can view the rest of the team through our website. Your current password is '. $password;
         
 
-        $email = $request->email;
-        $data = [
-                'name' => $request->name,
-                'password' => $password,
-                'title' => 'Account details for '. $request->name,
+                $mail = new PHPMailer;
+
+                $mail->SMTPDebug = 0;                                   // Enable verbose debug output
+                $mail->isSMTP();                                        // Set mailer to use SMTP
+                $mail->Host = 'smtp.gmail.com';                                             // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true;                                 // Enable SMTP authentication
+                $mail->Username = env('MY_EMAIL');             // SMTP username
+                $mail->Password = env('MY_PASSWORD');              // SMTP password
+                $mail->SMTPSecure = 'tls';                            // Enable TLS 
+                $mail->Port = 587;                                    // TCP port to 
+                //Recipients
+                $mail->setFrom(env('MY_EMAIL'), 'Nouveta Admin');
+                $mail->addAddress($request->email, $request->name);  // Add a recipient, Name is optional
+                $mail->addReplyTo('your-email@gmail.com', 'Mailer');
                 
-                 ];
+                $mail->isHTML(true);                                                                    // Set email format to HTML
+                $mail->Subject = 'Welcome to Nouveta';
+                $mail->Body    = $message;                     // message
 
-        Mail::send('emails.send', $data, function ($message) use ($email)
-            {
-                $message->subject('New account created!');
-                $message->from('admin@nouveta.tech', 'Ian Macharia');
-                $message->to($email);
-
-            });
+                $mail->send();
+                
 
 
-        $user  = new User;
+                $user  = new User;
 
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->name = $request->name;
-        $user->title = $request->title;
-        $user->gender = $request->gender;
-        $user->added_by = Auth::user()->name;
-        $user->password = Hash::make($password);
+                $user->email = $request->email;
+                $user->phone = $request->phone;
+                $user->name = $request->name;
+                $user->title = $request->title;
+                $user->gender = $request->gender;
+                $user->added_by = Auth::user()->name;
+                $user->password = Hash::make($password);
 
-        // dd($user);
-        $user->save();
+                // dd($user);
+                $user->save();
 
-        return redirect()->route('users.create');
+                return route('posts/')->with('success','Message has been sent!');
     }
 
     /**

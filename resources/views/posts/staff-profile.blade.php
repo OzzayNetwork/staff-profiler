@@ -6,7 +6,7 @@
 		<div class="row m-5 the-row text-capitalize position-relative">
 			<div class="col-lg-6 col-md-8 p-3 col-sm-12">
 				<h2 class="text-capitalize mb-3">
-					@if($post->id==Auth::id())
+					@if($post->user_id==Auth::id())
 						My profile
 					@else
 						{{$firstname}}'s profile

@@ -37,7 +37,6 @@ class PostsController extends Controller
 
          // dd($posts);
         return view('posts.index')->with('posts',$posts);
-        // return view('posts.staff-profile2')->with('posts',$posts);
     }
 
     /**

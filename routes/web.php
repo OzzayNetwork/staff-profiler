@@ -23,7 +23,7 @@
 //     return view('pages.about');
 // });
 
-Route::get('/', 'PagesController@index')->name('home');
+Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/staff-profile', 'PagesController@staffprofile');

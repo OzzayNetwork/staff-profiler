@@ -7,7 +7,7 @@
             <div class="col-12 col-md-9 col-lg-8 col-xl-6 form-container">
                 <div class="title-container">
                     <div class="the-txt  mr-5 mb-3">
-                        <h2 class="text-capitalize text-left mb-3">Welcome aboard john!</h2>
+                        <h2 class="text-capitalize text-left mb-3">Welcome aboard {{Auth::user()->name}}!</h2>
                         <p class="paragraph text-left mb-5">Hi! We at Nouveta LTD would love to welcome you into the Veta family. With that being said, we would love to know some professional &amp; fun facts about you. Kindly fill the form below. Feel at home and welcome once again. </p>
                     </div>
                   
