@@ -28,6 +28,8 @@ Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/staff-profile', 'PagesController@staffprofile');
 Route::get('/staffs', 'PagesController@staffs');
+Route::get('/announcements', 'PagesController@announcements');
+
 
 
 

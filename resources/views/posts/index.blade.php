@@ -48,15 +48,15 @@
                                 </div>
                             </td>
                            
-                            <td class="d-flex align-items-center w-75 justify-content-end">
+                            <td class="d-flex align-items-center w-75 justify-content-end social-container">
 
-                                    <span class="mr-5 user-phone"><i data-feather="phone-call" class="mr-2"></i>{{$post->user->phone}}</span>
+                                    <span class="mr-5 user-phone"><i data-feather="phone-call" class="mr-2"></i><a href="tel://{{$post->user->phone}} "> {{$post->user->phone}} </a></span>
 
                                     @if($post->github!="")
-                                         <a href="{{$post->github}}" target="new" class="git-acc ml-3" title="view {{$post->user->name}}'s github profile"><i data-feather="github"></i></a>
+                                         <a href="{{$post->github}}" target="new" class="git-acc ml-3 social" title="view {{$post->user->name}}'s github profile"><i data-feather="github"></i></a>
                                     @endif
                                     @if($post->facebook!="")
-                                    <a href="{{$post->facebook}}" target="new" class="facebook-acc mx-3" title="view {{$post->user->name}}'s facebook account page"><i data-feather="facebook"></i></a>
+                                    <a href="{{$post->facebook}}" target="new" class="facebook-acc mx-3 social" title="view {{$post->user->name}}'s facebook account page"><i data-feather="facebook"></i></a>
 
                                     @endif
                                     <div class="dropdown dropleft">

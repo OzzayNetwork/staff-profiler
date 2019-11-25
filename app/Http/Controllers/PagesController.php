@@ -34,4 +34,8 @@ class PagesController extends Controller
     public function staffs(){
         return view('pages.staffs');
     }
+
+    public function announcements(){
+        return view('pages.announcements');
+    }
 }

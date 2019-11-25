@@ -2,8 +2,8 @@
         <nav role="navigation" class="vh-100">
           <ul>
             <li class="card-link"><a href="/posts/" data-content="fellow members profiles">Staff profiles</a></li>
-            <li><a href="#" data-content="Office related announcements">announcements</a></li>
-            <li><a href="#" data-content="Upcoming events and staff birthdays">events</a></li>
+            <li><a href="/announcements" data-content="Office related announcements">announcements</a></li>
+            <li><a href="/announcements" data-content="Upcoming events and staff birthdays">events</a></li>
             <li><a href="/users/create" data-content="Register a new account">create account</a></li>
             <li><a href="#" data-content="log me out">logout</a></li>
           </ul>
