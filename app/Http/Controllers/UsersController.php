@@ -71,12 +71,12 @@ class UsersController extends Controller
                 $mail->isSMTP();                                        // Set mailer to use SMTP
                 $mail->Host = 'smtp.gmail.com';                                             // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true;                                 // Enable SMTP authentication
-                $mail->Username = 'testingsissyy@gmail.com';             // SMTP username
-                $mail->Password = 'nouveta2019!';              // SMTP password
+                $mail->Username = env('MY_EMAIL');             // SMTP username
+                $mail->Password = env('MY_PASSWORD');              // SMTP password
                 $mail->SMTPSecure = 'tls';                            // Enable TLS 
                 $mail->Port = 587;                                    // TCP port to 
                 //Recipients
-                $mail->setFrom('testingsissyy@gmail.com', 'Nouveta Admin');
+                $mail->setFrom(env('MY_EMAIL'), 'Nouveta Admin');
                 $mail->addAddress($request->email, $request->name);  // Add a recipient, Name is optional
                 $mail->addReplyTo('your-email@gmail.com', 'Mailer');
                 
