@@ -5,7 +5,7 @@
 		<div class="row m-5 text-capitalize the-profile-table">
 			<div class="col-12">
 				<h3 class="text-capitalize">the team</h3>
-				<p>below is your fellow workmeates, click on any to have a look at their profile</p>
+				<p>below is your fellow workmates, click on any to have a look at their profile</p>
 				<hr>
 				<table id="example" class="table  p-3 profile-table mt-3" style="width:100%">
         <thead>
@@ -34,9 +34,15 @@
                                     </a>
                                 <div>
                                     <h6 class="p-0 m-0 text-capitalize no-wrap">
-                                        {{explode(' ', $post->user->name)[0]}} {{explode(' ', $post->user->name)[1]}}  
+                                        @if($post->user_id==Auth::id())
+                                            {{'Me'}}
+                                        @else
+                                        {{explode(' ', $post->user->name)[0]}} {{explode(' ', $post->user->name)[1]}} 
+                                        @endif
+
+                                         
                                         @if(!is_null($post->user->created_at))
-                                        @if($post->user->created_at->diffInDays(Carbon\Carbon::now()) <= 7)
+                                        @if($post->created_at->diffInDays(Carbon\Carbon::now()) <= 7)
                                         
                                         <span class="badge badge-pill badge-warning">New</span>
                                         @endif

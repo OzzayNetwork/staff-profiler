@@ -88,6 +88,7 @@ h2{
 	background-position: bottom right;
     background-size: cover;
 	box-shadow: 0px 20px 44px -12px rgba(33, 37, 41, 0.35);
+	overflow: hidden;
 }
 .social-container .social{
 	background: #b3b3b3;
@@ -164,6 +165,20 @@ h2{
 	filter: grayscale(1);
 	font-family: serif;
 	font-size: 5.5rem;
+}
+
+.new-staff{
+	padding: 15px;
+    background: #ffc107;
+    color: #212529;
+    right: -55px;
+    top: 37px;
+    transform: translateX(0px);
+    transform: rotateZ(45deg);
+    padding-right: 56px;
+	padding-left: 56px;
+	font-weight: 700;
+	font-size: 17px;
 }
 
 .opacity-1{
