@@ -14,7 +14,7 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form></li>
-            
+
           </ul>
         </nav>
       </div>
@@ -25,7 +25,7 @@
             <div class="img-container"><img src="/cover_images/116838.jpg"></div>
         </a>
         <h6 class="p-0 m-0 text-capitalize no-wrap user-name">
-                Ian Macharia  
+                {{Auth::user()->name}}
                 </h6>
         
     </div>
