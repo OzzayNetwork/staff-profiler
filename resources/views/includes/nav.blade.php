@@ -12,9 +12,9 @@
 
 <div class="">
     <div class="position-absolute">
-        <div class="nav-prof-img">
+        <a class="nav-prof-img" href="#" title="My Profile">
             <div class="img-container"><img src="/cover_images/116838.jpg"></div>
-        </div>
+        </a>
         <h6 class="p-0 m-0 text-capitalize no-wrap user-name">
                 Ian Macharia  
                 </h6>
