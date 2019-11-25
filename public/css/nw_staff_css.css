@@ -89,6 +89,17 @@ h2{
     background-size: cover;
 	box-shadow: 0px 20px 44px -12px rgba(33, 37, 41, 0.35);
 }
+.social-container .social{
+	background: #b3b3b3;
+	  border-radius: 50%;
+	  color: white;
+	  padding: 7px;
+  
+  }
+  .social-container .social:hover{
+	background: #007bff;
+  
+  }
 .the-profile-table{
 	background: white url("../img/circularbg3.svg") no-repeat right top;
 	background-position: bottom right;
@@ -147,6 +158,12 @@ h2{
 
 .h6, h6 {
     font-size: 1.1em;
+}
+
+.coming-soon{
+	filter: grayscale(1);
+	font-family: serif;
+	font-size: 5.5rem;
 }
 
 
