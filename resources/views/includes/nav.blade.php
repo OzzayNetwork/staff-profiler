@@ -22,7 +22,9 @@
 <div class="">
     <div class="position-absolute">
         <a class="nav-prof-img" href="#" title="My Profile">
-            <div class="img-container"><img src="/cover_images/116838.jpg"></div>
+            @if(Auth::user()->post)
+            <div class="img-container"><img src="/cover_images/{{Auth::user()->post->pic}}"></div>
+            @endif
         </a>
         <h6 class="p-0 m-0 text-capitalize no-wrap user-name">
                 {{Auth::user()->name}}
