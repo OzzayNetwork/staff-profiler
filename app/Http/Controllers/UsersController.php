@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use App\Jobs\WelcomeMail;
+use Carbon\Carbon;
 
 use App\User;
 
@@ -61,47 +63,23 @@ class UsersController extends Controller
             'gender' => 'required',
         ]);
 
+        $user  = new User;
+
         $password = Str::random(8);
-        $message = 'Welcome to the Nouveta family! We hope this is the start of a beautiful partnership where we can learn from each other. You can view the rest of the team through our website. Your current password is '. $password;
-        
 
-                $mail = new PHPMailer;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->name = $request->name;
+        $user->title = $request->title;
+        $user->gender = $request->gender;
+        $user->added_by = Auth::user()->name;
+        $user->password = Hash::make($password);
 
-                $mail->SMTPDebug = 0;                                   // Enable verbose debug output
-                $mail->isSMTP();                                        // Set mailer to use SMTP
-                $mail->Host = 'smtp.gmail.com';                                             // Specify main and backup SMTP servers
-                $mail->SMTPAuth = true;                                 // Enable SMTP authentication
-                $mail->Username = env('MY_EMAIL');             // SMTP username
-                $mail->Password = env('MY_PASSWORD');              // SMTP password
-                $mail->SMTPSecure = 'tls';                            // Enable TLS 
-                $mail->Port = 587;                                    // TCP port to 
-                //Recipients
-                $mail->setFrom(env('MY_EMAIL'), 'Nouveta Admin');
-                $mail->addAddress($request->email, $request->name);  // Add a recipient, Name is optional
-                $mail->addReplyTo('your-email@gmail.com', 'Mailer');
-                
-                $mail->isHTML(true);                                                                    // Set email format to HTML
-                $mail->Subject = 'Welcome to Nouveta';
-                $mail->Body    = $message;                     // message
+        $user->save();
 
-                $mail->send();
-                
+        WelcomeMail::dispatch($user, $password)->delay(Carbon::now()->addSeconds(3));
 
-
-                $user  = new User;
-
-                $user->email = $request->email;
-                $user->phone = $request->phone;
-                $user->name = $request->name;
-                $user->title = $request->title;
-                $user->gender = $request->gender;
-                $user->added_by = Auth::user()->name;
-                $user->password = Hash::make($password);
-
-                // dd($user);
-                $user->save();
-
-                return redirect('posts')->with('success','Message has been sent!');
+        return redirect('posts')->with('success','Employee has been added to the system.');
     }
 
     /**
