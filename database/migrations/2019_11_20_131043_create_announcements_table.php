@@ -15,7 +15,13 @@ class CreateAnnouncementsTable extends Migration
     {
         Schema::create('announcements', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('category');
+            $table->string('title');
+            $table->unsignedBigInteger('user_id');
+            $table->string('added_by');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

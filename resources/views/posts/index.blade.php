@@ -21,6 +21,11 @@
             @if($birthdays)
                 <div class="col-md-12">
                     @foreach($birthdays as $birthday)
+                        @if($birthday->user_id == Auth::id())
+                            <div id="message" class="alert alert-success">
+                              Happy birthday  {{explode(' ', $birthday->user->name)[0]}}! Nouveta is glad to share this day with you.
+                            </div>
+                        @else
                             <div id="message" class="alert alert-success">
                               Its  {{explode(' ', $birthday->user->name)[0]}}'s birthday today!
                               @if($birthday->user->gender == 'female')
@@ -29,6 +34,7 @@
                               Wish him a happy birthday!
                               @endif
                             </div>
+                        @endif
                     @endforeach
                         </div>
             @endif
