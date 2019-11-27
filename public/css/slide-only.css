@@ -1,0 +1,208 @@
+* {
+    margin: 0px;
+    outline: none;
+    padding: 0px;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main-section {
+    margin: 40px 0 0 0;
+	overflow: hidden;
+}
+ul.cs-history-slider {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 0;
+    cursor: move;
+}
+.slick-list.draggable {
+    overflow: hidden;
+}
+[class*="col-lg"], [class*="col-md"], [class*="col-sm"] {
+    display: inline-block;
+    float: none;
+    margin: 0 -4px 0 0;
+    vertical-align: top;
+}
+ul.cs-history-slider li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out 0s;
+}
+figure {
+    margin-bottom: 0;
+    position: relative;
+}
+ul.cs-history-slider .cs-media figure img {
+    /* width: 100%; */
+    height: 637px;
+    object-fit: unset;
+    filter: brightness(0.5);
+    filter: grayscale(1) brightness(0.5);
+    transition-duration: 0.8s;
+    transform-origin: bottom right;
+}
+
+ul.cs-history-slider .cs-media figure figcaption {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 50px;
+    transition: all 0.4s ease-in-out 0s;
+}
+ul.cs-history-slider .cs-media figure figcaption:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #f4f2ed;
+    opacity: 0.2;
+}
+.cs-text svg{
+    height: 20px;
+}
+ul.cs-history-slider .cs-media figure figcaption:after {
+    position: absolute;
+    content: '';
+    top: -8px;
+    left: 50%;
+    width: 17px;
+    height: 17px;
+    background: #656c8a;
+    border-radius: 50%;
+}
+ul.cs-history-slider li .cs-text {
+    position: absolute;
+    bottom: -136px;
+    left: 0;
+    padding: 35px 50px 15px;
+    transition: all 0.4s ease-in-out 0s;
+}
+.cs-text h5 {
+    font-size: 16px;
+    line-height: 22px;
+}
+ul.cs-history-slider li .cs-text h5 {
+    color: #fff !important;
+    text-transform: uppercase !important;
+    /* margin-bottom: 20px !important; */
+}
+l.cs-history-slider li .cs-text p {
+    font-size: 14px;
+    color: #aaa !important;
+}
+ul.cs-history-slider .cs-media figure figcaption {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 19px;
+    padding-top: 50px;
+    transition: all 0.4s ease-in-out 0s;
+    margin-left: 7px;
+    margin-right: 7px;;
+}
+ul.cs-history-slider .cs-media figure figcaption:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #f4f2ed;
+    opacity: 0.2;
+}
+ul.cs-history-slider .cs-media figure figcaption:after {
+    position: absolute;
+    content: '';
+    top: -8px;
+    left: 50%;
+    width: 17px;
+    height: 17px;
+    background: #f37a1d;
+    border-radius: 50%;
+}
+
+ul.cs-history-slider li .cs-text {
+    position: absolute;
+    bottom: -170px;
+    left: 0;
+    padding: 35px 50px 15px;
+    transition: all 0.4s ease-in-out 0s;
+}
+body, .main-section p, .mce-content-body p {
+    /* font: Normal 14px/26px "Open Sans", sans-serif; */
+    letter-spacing: 1px;
+    text-transform: none;
+    color: #555555;
+}
+ul.cs-history-slider li .cs-text p {
+    font-size: 14px;
+    color: #aaa !important;
+/* elipis */
+    font-size: 14px;
+    color: #aaa !important;
+    height: 89px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+.more-link a{
+    color: white;
+}
+.more-link a:hover{
+    color: orange;
+}
+li {
+    line-height: 28px;
+    list-style: disc inside none;
+}
+ul.cs-history-slider li:hover .cs-text {
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+}
+.page-section .col-lg2{
+	padding: 0px !important;
+}
+
+ul.cs-history-slider li:hover img{
+    filter: none;
+    transform: scale(1.1);
+    
+}
+
+
+/* On screens that are 1770 or less */
+@media screen and (max-width: 1770px) {
+    ul.cs-history-slider .cs-media figure img{
+        max-height:680.42px;
+    }
+  }
+
+/* On screens that are 992px or less*/
+@media screen and (max-width: 1770px) {
+    ul.cs-history-slider .cs-media figure img{
+        max-height:680.42px;
+    }
+  }
+
