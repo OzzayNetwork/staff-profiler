@@ -18,6 +18,15 @@
                         </div>
                     </div>
                 @endif
+            @if($birthdays)
+                <div class="col-md-12">
+                    @foreach($birthdays as $birthday)
+                            <div id="message" class="alert alert-success">
+                              Its  {{explode(' ', $birthday->user->name)[0]}}'s birthday today!
+                            </div>
+                    @endforeach
+                        </div>
+            @endif
             <tr class="d-none">
                 <th></th>
             </tr>

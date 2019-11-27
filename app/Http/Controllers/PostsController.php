@@ -35,12 +35,16 @@ class PostsController extends Controller
                 $posts = Post::where('approval_status', 1)->orderBy('id','desc')->paginate(5);
             }
 
-            $birthdays = Post::whereRaw('DATE(dob) = CURRENT_DATE')->get();
-             
+            $today = date_parse_from_format('Y-m-d',Carbon::now());
+
+            $birthdays = Post::whereMonth('dob', $today['month'])->whereDay('dob', $today['day'])->get();
+            
              $data = [
                 'posts' => $posts,
                 'birthdays' => $birthdays,
             ];
+
+            // dd($birthdays);
              
             return view('posts.index')->with($data);
         }
