@@ -23,6 +23,11 @@
                     @foreach($birthdays as $birthday)
                             <div id="message" class="alert alert-success">
                               Its  {{explode(' ', $birthday->user->name)[0]}}'s birthday today!
+                              @if($birthday->user->gender == 'female')
+                              Wish her a happy birthday!
+                              @else
+                              Wish him a happy birthday!
+                              @endif
                             </div>
                     @endforeach
                         </div>
