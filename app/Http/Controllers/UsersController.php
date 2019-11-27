@@ -101,7 +101,7 @@ class UsersController extends Controller
                 // dd($user);
                 $user->save();
 
-                return route('posts/')->with('success','Message has been sent!');
+                return redirect('posts')->with('success','Message has been sent!');
     }
 
     /**
