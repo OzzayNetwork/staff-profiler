@@ -17,11 +17,12 @@ class CreateAnnouncementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('category');
             $table->string('title');
-            $table->unsignedBigInteger('user_id');
-            $table->string('added_by');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('added_by')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('added_by')->references('id')->on('users');
         });
     }
 
