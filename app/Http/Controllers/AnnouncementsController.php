@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Announcement;
 use Illuminate\Support\Facades\Auth;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use App\Jobs\SendAnnouncement;
+use Carbon\Carbon;
+
+
 
 class AnnouncementsController extends Controller
 {
@@ -45,12 +51,17 @@ class AnnouncementsController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'category' => 'required',
+            'details' => 'required',
              ]);
+
+        $message = $request->details;
+                
 
         $announcement = new Announcement;
 
         $announcement->title = $request->title;
         $announcement->category = $request->category;
+        $announcement->details = $request->details;
         if(!is_null($request->user_id))
         {
             $announcement->user_id = $request->user_id;
@@ -61,7 +72,11 @@ class AnnouncementsController extends Controller
         
         $announcement->save();
 
-        return redirect('announcements/');
+        SendAnnouncement::dispatch($announcement)->delay(Carbon::now()->addSeconds(3));
+
+
+
+        return redirect('announcements/create');
     }
 
     /**

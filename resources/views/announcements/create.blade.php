@@ -28,6 +28,20 @@
                         </div>
 
                         <div class="form-group row">
+
+                            <div class="col-md-12">
+                                <label for="details" class="float-left">Details of the announcement</label>
+                                <input id="details" type="text" class="form-control @error('details') is-invalid @enderror" name="details" value="{{ old('details') }}" required autocomplete="details" autofocus>
+
+                                @error('details')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-md-12">
                                 <label for="category" class="float-left">Select the announcement category</label>
                                   <select class="form-control" id="category" name="category">

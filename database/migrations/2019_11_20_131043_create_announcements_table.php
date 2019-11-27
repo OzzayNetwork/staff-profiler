@@ -17,6 +17,7 @@ class CreateAnnouncementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('category');
             $table->string('title');
+            $table->string('details');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('added_by')->nullable();
             $table->timestamps();
