@@ -35,4 +35,4 @@ Route::get('activate-user/{id}', 'UsersController@activateUser')->name('activate
 
 
 //announcements
-Route::resource('announcements', 'AnnouncementsController');
+// Route::resource('announcements', 'AnnouncementsController');
