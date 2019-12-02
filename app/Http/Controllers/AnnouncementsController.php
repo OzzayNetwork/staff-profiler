@@ -71,6 +71,7 @@ class AnnouncementsController extends Controller
 
         
         $announcement->save();
+        $users = User::all('email', 'name');
 
         $mail = new PHPMailer;
 

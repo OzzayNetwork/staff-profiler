@@ -61,7 +61,7 @@
                     
                     <div class="col-12 d-flex flex-column mb-2 mt-3">
                         @include('includes.messages')
-                      <button class="btn2" type="submit">SUBMIT</button>
+                      <button class="btn2" type="submit" onclick="alert('Sending the user an email')">SUBMIT</button>
                     
                     </div>
                   </div>
@@ -73,3 +73,6 @@
       </section>
 	
     @endsection
+<script type="text/javascript">
+  <
+</script>
