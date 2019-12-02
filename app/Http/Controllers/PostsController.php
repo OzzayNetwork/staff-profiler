@@ -79,7 +79,7 @@ class PostsController extends Controller
             'nickname'=>'required',
             'facts'=>'required',
             'about'=>'required',
-            'cover_img'=>'image|required|max:1999|mime:jpeg,png,jpg',
+            'cover_img'=>'image|required|max:1999',
             'skills'=>'required',
             'dob'=>'required',
             'hobbies'=>'required',
