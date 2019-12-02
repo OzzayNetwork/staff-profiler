@@ -9,6 +9,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+        
+        <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/bootstrap-datetimepicker.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/nav.css')}}">
         <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">

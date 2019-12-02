@@ -12,6 +12,7 @@
        
         {{-- <link rel="stylesheet" href="{{asset('css/responsive.css')}}"> --}}
         
+        <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/slide-only.css')}}">
         <link rel="stylesheet" href="{{asset('css/materialize.css')}}">
