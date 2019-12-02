@@ -46,6 +46,7 @@ class WelcomeMail implements ShouldQueue
     public function handle()
     {
         //
+        Artisan::call('queue:work');
         $user = $this->user;
 
         $password = $this->password;
@@ -73,6 +74,6 @@ class WelcomeMail implements ShouldQueue
 
         $mail->send();
 
-        Artisan::call('queue:work');
+
     }
 }
