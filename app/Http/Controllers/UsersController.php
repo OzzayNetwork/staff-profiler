@@ -11,6 +11,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use App\Jobs\WelcomeMail;
 use Carbon\Carbon;
+use Artisan;
 
 use App\User;
 
@@ -77,9 +78,12 @@ class UsersController extends Controller
 
         $user->save();
 
-        WelcomeMail::dispatch($user, $password)->delay(Carbon::now()->addSeconds(3));
+        WelcomeMail::dispatch($user, $password)->delay(Carbon::now()->addSeconds(5));
+
+        
 
         return redirect('posts')->with('success','Employee has been added to the system.');
+        Artisan::call('queue:work');
     }
 
     /**

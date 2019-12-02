@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use Artisan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 

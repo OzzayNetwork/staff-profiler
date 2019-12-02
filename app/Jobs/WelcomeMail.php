@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Artisan;
 
 use App\User;
 
@@ -71,5 +72,7 @@ class WelcomeMail implements ShouldQueue
         $mail->Body    = $message; 
 
         $mail->send();
+
+        Artisan::call('queue:work');
     }
 }
