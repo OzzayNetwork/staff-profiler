@@ -105,7 +105,7 @@ class UsersController extends Controller
 
         
 
-        return redirect('posts')->with('success','Employee has been added to the system.');
+        return redirect('posts')->with('success','The link has been sent to the user.');
     }
 
     /**
