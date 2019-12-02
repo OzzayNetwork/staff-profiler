@@ -13,6 +13,7 @@ use PHPMailer\PHPMailer\Exception;
 use App\Announcement;
 use App\User;
 use Carbon\Carbon;
+use Artisan;
 
 
 
@@ -42,7 +43,7 @@ class SendAnnouncement implements ShouldQueue
     public function handle()
     {
         //
-
+        Artisan::call('queue:work');
         $announcement = $this->announcement;
         $users = User::all('email', 'name');
 
@@ -73,6 +74,6 @@ class SendAnnouncement implements ShouldQueue
         {
             echo "Mailer Error ({$user['email']}) {$mail->ErrorInfo}\n";
         }
-
+        
     }
 }

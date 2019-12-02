@@ -11,6 +11,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use App\Jobs\WelcomeMail;
 use Carbon\Carbon;
+use Artisan;
 
 use App\User;
 
@@ -77,9 +78,34 @@ class UsersController extends Controller
 
         $user->save();
 
-        WelcomeMail::dispatch($user, $password)->delay(Carbon::now()->addSeconds(3));
+        $message = '<html>Welcome to the Nouveta family! We hope this is the start of a beautiful partnership where we can learn from each other. You can view the rest of the team through our website: <a href=\'portal.nouveta.tech\'>Nouveta portal</a>. Your current password is '. $password. '</html>';
+        
 
-        return redirect('posts')->with('success','Employee has been added to the system.');
+        $mail = new PHPMailer;
+
+        $mail->SMTPDebug = 0;                                   
+        $mail->isSMTP();                                        
+        $mail->Host = 'smtp.gmail.com';                                             
+        $mail->SMTPAuth = true;                         
+        $mail->Username = env('MY_EMAIL');             
+        $mail->Password = env('MY_PASSWORD');   
+        $mail->SMTPSecure = 'tls'; 
+        $mail->Port = 587; 
+        $mail->setFrom(env('MY_EMAIL'), 'Nouveta Admin');
+        $mail->addAddress($user->email, $user->name); 
+        $mail->addReplyTo(env('MY_EMAIL'), 'Nouveta Admin');
+        
+        $mail->isHTML(true); 
+        $mail->Subject = 'Welcome to Nouveta';
+        $mail->Body    = $message; 
+
+        $mail->send();
+
+        // WelcomeMail::dispatch($user, $password)->delay(Carbon::now()->addSeconds(5));
+
+        
+
+        return redirect('posts')->with('success','The link has been sent to the user.');
     }
 
     /**

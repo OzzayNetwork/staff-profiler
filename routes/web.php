@@ -12,7 +12,7 @@
 */
 //authentication
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('posts/', 'PostsController@index')->name('home');
 
 //navigation
 Route::get('/', 'PagesController@index');
@@ -35,4 +35,4 @@ Route::get('activate-user/{id}', 'UsersController@activateUser')->name('activate
 
 
 //announcements
-// Route::resource('announcements', 'AnnouncementsController');
+Route::resource('announcements', 'AnnouncementsController');
