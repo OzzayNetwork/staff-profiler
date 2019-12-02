@@ -28,16 +28,25 @@ class PostsController extends Controller
         if(Auth::user()->post){
             if(Auth::user()->is_admin == 1)
             {
-                $posts=Post::orderBy('id','desc')->paginate(5);   
-            }
+                $posts=Post::orderBy('id','desc')->paginate(5);  
+                            }
             else
             {
                 $posts = Post::where('approval_status', 1)->orderBy('id','desc')->paginate(5);
             }
-             
 
-             // dd($posts);
-            return view('posts.index')->with('posts',$posts);
+            $today = date_parse_from_format('Y-m-d',Carbon::now());
+
+            $birthdays = Post::whereMonth('dob', $today['month'])->whereDay('dob', $today['day'])->get();
+            
+             $data = [
+                'posts' => $posts,
+                'birthdays' => $birthdays,
+            ];
+
+            // dd($birthdays);
+             
+            return view('posts.index')->with($data);
         }
 
         else{
@@ -108,7 +117,7 @@ class PostsController extends Controller
         $post->pic=$fileNameToStore;
         $post->facebook=$request->input('facebook');
         $post->github=$request->input('github');
-        $post->dob=$request->input('dob');
+        $post->dob=Carbon::parse($request->input('dob'));
         if(Auth::user()->is_admin)
         {
             $post->approval_status = 1;

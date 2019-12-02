@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Post', 'user_id');
     }
+
+    public function announcement()
+    {
+        return $this->hasMany('App\Announcement', 'added_by');
+    }
 }
