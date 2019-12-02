@@ -72,7 +72,35 @@ class AnnouncementsController extends Controller
         
         $announcement->save();
 
-        SendAnnouncement::dispatch($announcement)->delay(Carbon::now()->addSeconds(3));
+        $mail = new PHPMailer;
+
+        $mail->SMTPDebug = 0;                                   
+        $mail->isSMTP();                                        
+        $mail->Host = 'smtp.gmail.com';                                             
+        $mail->SMTPAuth = true;                                
+        $mail->Username = env('MY_EMAIL');             
+        $mail->Password = env('MY_PASSWORD');             
+        $mail->SMTPSecure = 'tls';                            
+        $mail->Port = 587;                                   
+        $mail->setFrom(env('MY_EMAIL'), 'Nouveta Admin');
+        $mail->addReplyTo(env('MY_EMAIL'), 'Nouveta Admin');
+        
+        $mail->isHTML(true);                                                                  
+        $mail->Subject = $announcement->title;
+        $mail->Body    = $announcement->details;  
+        foreach($users as $user)
+        try
+        {
+            $mail->addAddress($user->email, $user->name);
+            $mail->send();
+            $mail->clearAddresses();
+        }
+        catch (Exception $e)
+        {
+            echo "Mailer Error ({$user['email']}) {$mail->ErrorInfo}\n";
+        }
+        
+        // SendAnnouncement::dispatch($announcement)->delay(Carbon::now()->addSeconds(3));
 
 
 
