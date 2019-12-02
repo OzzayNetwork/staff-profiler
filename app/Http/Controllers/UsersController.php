@@ -78,7 +78,7 @@ class UsersController extends Controller
 
         $user->save();
 
-        $message = 'Welcome to the Nouveta family! We hope this is the start of a beautiful partnership where we can learn from each other. You can view the rest of the team through our website. Your current password is '. $password;
+        $message = '<html>Welcome to the Nouveta family! We hope this is the start of a beautiful partnership where we can learn from each other. You can view the rest of the team through our website: <a href=\'portal.nouveta.tech\'>Nouveta portal</a>. Your current password is '. $password. '</html>';
         
 
         $mail = new PHPMailer;
