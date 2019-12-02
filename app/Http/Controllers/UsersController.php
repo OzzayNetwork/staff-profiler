@@ -83,7 +83,6 @@ class UsersController extends Controller
         
 
         return redirect('posts')->with('success','Employee has been added to the system.');
-        Artisan::call('queue:work');
     }
 
     /**
